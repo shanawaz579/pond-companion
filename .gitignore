@@ -39,3 +39,13 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+.env
+.env.local
+*.log
+dist/
+test-results/
+playwright-report/
+audit.json
+
+.test-web/

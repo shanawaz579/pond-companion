@@ -3,20 +3,55 @@
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
+    "@react-native-community/datetimepicker": "9.2.1",
+    "@supabase/supabase-js": "^2.118.0",
     "expo": "~58.0.19",
+    "expo-crypto": "~58.0.7",
+    "expo-document-picker": "~58.0.4",
+    "expo-file-system": "~58.0.11",
+    "expo-font": "~58.0.10",
+    "expo-image-picker": "~58.0.10",
+    "expo-notifications": "~58.1.6",
+    "expo-secure-store": "~58.0.2",
+    "expo-sharing": "~58.0.20",
+    "expo-sqlite": "~58.0.14",
     "expo-status-bar": "~58.0.4",
+    "fflate": "^0.8.3",
     "react": "19.3.0",
-    "react-native": "0.88.0"
+    "react-dom": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-safe-area-context": "~5.10.1",
+    "react-native-url-polyfill": "^4.0.0",
+    "react-native-web": "^0.21.4"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
     "@types/react": "~19.3.0",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~58.0.4",
+    "node": "^24.22.1",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
     "typescript": "~6.0.3"
   },
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
+    "start": "node_modules/node/bin/node node_modules/expo/bin/cli start",
+    "android": "node_modules/node/bin/node node_modules/expo/bin/cli start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "node_modules/node/bin/node node_modules/expo/bin/cli start --web",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:ui": "playwright test",
+    "export:android": "node_modules/node/bin/node node_modules/expo/bin/cli export --platform android",
+    "export:web": "node_modules/node/bin/node node_modules/expo/bin/cli export --platform web",
+    "lint": "node_modules/node/bin/node node_modules/eslint/bin/eslint.js .",
+    "test:cloud-ui": "node_modules/node/bin/node node_modules/@playwright/test/cli.js test --config playwright.cloud.config.ts"
   },
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  }
 }

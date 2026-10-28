@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "pond-companion",
+    "name": "Pond Companion",
     "slug": "pond-companion",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,15 +11,39 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#e7efe3",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.pondcompanion.farmer",
+      "allowBackup": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose pond and report photos.",
+          "cameraPermission": "Photograph pond reports and product labels.",
+          "microphonePermission": false
+        }
+      ],
+      "expo-document-picker",
+      "expo-notifications",
+      "expo-secure-store",
+      "@react-native-community/datetimepicker"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "afd62bd3-a14f-4aa9-b65d-f012a32fe229"
+      }
+    },
+    "owner": "shanawaz579"
   }
 }
